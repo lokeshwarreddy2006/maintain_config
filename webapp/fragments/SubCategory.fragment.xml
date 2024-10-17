@@ -1,0 +1,66 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+	xmlns:smartTable="sap.ui.comp.smarttable"
+	xmlns:core="sap.ui.core">
+	<VBox>
+		<!-- UI Filters -->
+		<smartFilterBar:SmartFilterBar id="smartFilterBarSubCategory" entitySet="SubCategorySet" persistencyKey="SmartFilter_Explored" showClearOnFB="true">
+			<smartFilterBar:controlConfiguration>
+				<smartFilterBar:ControlConfiguration  key="Langu"  index="1" groupId="_BASIC" visibleInAdvancedArea="true"/>
+				<smartFilterBar:ControlConfiguration  key="SubCategory"  index="2" groupId="_BASIC" visibleInAdvancedArea="true"/>
+			</smartFilterBar:controlConfiguration>
+		</smartFilterBar:SmartFilterBar>
+		<!-- smart table with necessary fields -->
+		<smartTable:SmartTable id="idSmartTableSubCategory" entitySet="SubCategorySet" smartFilterId="smartFilterBarSubCategory"
+			                tableType="ResponsiveTable"  useVariantManagement="true" useTablePersonalisation="false" header="Line Items"
+			                showRowCount="true"  enableAutoBinding="true" demandPopin="true" class="sapUiResponsiveContentPadding">
+			<smartTable:customToolbar >
+				<OverflowToolbar design="Transparent">
+					<ToolbarSpacer />
+					<Button text="Create" press="onCreateSubCategoryPress" ></Button>
+					<Button id="idEditSubCategory" text="Edit" press="onEditSubCategory" enabled="false"></Button>
+					<Button id="idDeleteSubCategory" text="Delete" press="onDeleteSubCategory" enabled="false"></Button>
+				</OverflowToolbar>
+			</smartTable:customToolbar>
+			<Table id="TableSubCategoryId" growing="true" growingScrollToLoad="true" sticky="ColumnHeaders,HeaderToolbar" 
+				mode="MultiSelect" alternateRowColors="true" selectionChange="onSelectionChangeSubCategory">
+				<columns>
+					<Column id="columnSC0" hAlign="Begin" width="8%">
+						<customData>
+							<core:CustomData key="p13nData"
+                                   value='\{"columnKey": "Langu","columnIndex":"0","leadingProperty":"Langu", "sortProperty": "Langu", "filterProperty": "Langu"}'
+                                />
+						</customData>
+						<Text text="{i18n>langu}" />
+					</Column>
+					<Column id="columnSC1" hAlign="Begin" width="10%">
+						<customData>
+							<core:CustomData key="p13nData"
+                                   value='\{"columnKey": "SubCategory","columnIndex":"1","leadingProperty":"SubCategory", "sortProperty": "SubCategory", "filterProperty": "SubCategory"}'
+                                />
+						</customData>
+						<Text text="{i18n>subcatagory}" />
+					</Column>
+					<Column id="columnSC2" hAlign="Begin" >
+						<customData>
+							<core:CustomData key="p13nData"
+                                    value='\{"columnKey": "SubCtgryt","columnIndex":"2","leadingProperty":"SubCtgryt", "sortProperty": "SubCtgryt", "filterProperty": "SubCtgryt"}'
+                                />
+						</customData>
+						<Text text="{i18n>subCtgryt}" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem  vAlign="Middle">
+						<cells>
+							<Text  text="{Langu}"/>
+							<Text  text="{SubCategory}"/>
+							<Text  text="{SubCtgryt}" />
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</smartTable:SmartTable>
+	</VBox>
+</core:FragmentDefinition>

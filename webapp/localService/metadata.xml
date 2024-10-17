@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="PIMD.MAINT_CONFIG_VALUES_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="ISICCode" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Langu"/>
+                    <PropertyRef Name="IsicCode"/>
+                </Key>
+                <Property Name="Langu" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Language" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IsicCode" Type="Edm.String" Nullable="false" MaxLength="7" sap:unicode="false" sap:label="ISIC Code" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IsicCodet" Type="Edm.String" Nullable="false" MaxLength="1333" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="SUBCategory" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Langu"/>
+                    <PropertyRef Name="SubCategory"/>
+                </Key>
+                <Property Name="Langu" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Language" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SubCategory" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Sub Category" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SubCtgryt" Type="Edm.String" Nullable="false" MaxLength="1333" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="SACCode" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Langu"/>
+                    <PropertyRef Name="SacCode"/>
+                </Key>
+                <Property Name="Langu" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Language" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SacCode" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="SAC Code" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SacCodet" Type="Edm.String" Nullable="false" MaxLength="1333" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityContainer Name="PIMD_MAINT_CONFIG_VALUES_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="ISICCodeSet" EntityType="PIMD.MAINT_CONFIG_VALUES_SRV.ISICCode" sap:content-version="1"/>
+                <EntitySet Name="SubCategorySet" EntityType="PIMD.MAINT_CONFIG_VALUES_SRV.SUBCategory" sap:content-version="1"/>
+                <EntitySet Name="SACCodeSet" EntityType="PIMD.MAINT_CONFIG_VALUES_SRV.SACCode" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <atom:link rel="self" href="https://s4hanat23:4000/sap/opu/odata/pimd/MAINT_CONFIG_VALUES_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://s4hanat23:4000/sap/opu/odata/pimd/MAINT_CONFIG_VALUES_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
